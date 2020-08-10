@@ -2,15 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-let city = {
-  name: "Washington DC",
-  country: "United States"
+
+function Hello(props) {
+  console.log(props)
+  return (
+    <div>
+      <h1>Welcome to {props.library}</h1>
+      <p>{props.message}</p>
+      <p>{Object.keys(props).length} Props Total</p>
+    </div>
+   
+  )
 }
 
 ReactDOM.render(
-  <h1 id="heading" className="cool-text">
-    {city.name} is in {city.country}
-  </h1>,
+  <Hello 
+    library="React" 
+    message="Have fun!"
+  />,
   document.getElementById("root")
 );
 
