@@ -1,26 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
+function Lake({ name }) {
+  return <h1>{name}</h1>;
+}
 
-function Hello(props) {
-  console.log(props)
+function App() {
   return (
     <div>
-      <h1>Welcome to {props.library}</h1>
-      <p>{props.message}</p>
-      <p>{Object.keys(props).length} Props Total</p>
+      <Lake name="Lake Tahoe" />
+      <Lake name="Angora Lake" />
+      <Lake name="Shirley Lake" />
     </div>
-   
-  )
+  );
 }
 
 ReactDOM.render(
-  <Hello 
-    library="React" 
-    message="Have fun!"
-  />,
+  <App />,
   document.getElementById("root")
 );
-
-
